@@ -59,7 +59,12 @@ To configure and build workspace execute following commands:
   colcon build --symlink-install --mixin rel-with-deb-info compile-commands ccache
   ```
 
-## Running Executable
+## Running Simulation
 ```
-ros2 launch ur_simulation_gazebo
+ros2 launch ur_simulation_gazebo ur_sim_control.launch.py
+```
+
+Move robot using test script from  `ur_bringup` package:
+```
+ros2 launch ur_bringup test_joint_trajectory_controller.launch.py
 ```
