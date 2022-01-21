@@ -1,4 +1,11 @@
 repositories:
+  gazebo_ros2_control:
+    type: git
+    url: https://github.com/destogl/gazebo_ros2_control.git
+    version: add-support-for-initial-position
+    #url: https://github.com/ros-simulation/gazebo_ros2_control.git
+    #version: master
+
   ros2_control_demos:
     type: git
     url: https://github.com/ros-controls/ros2_control_demos.git
@@ -11,7 +18,7 @@ repositories:
   Universal_Robots_ROS2_Description:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
-    version: simulation
+    version: ros2
   Universal_Robots_ROS2_Driver:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git

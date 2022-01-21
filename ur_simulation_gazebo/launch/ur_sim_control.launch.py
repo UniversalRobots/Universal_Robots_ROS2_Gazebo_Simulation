@@ -31,12 +31,13 @@
 from launch import LaunchDescription
 from launch.actions import (
     DeclareLaunchArgument,
-    ExecuteProcess,
+    IncludeLaunchDescription,
     OpaqueFunction,
     RegisterEventHandler,
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.event_handlers import OnProcessExit
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import Command, FindExecutable, LaunchConfiguration, PathJoinSubstitution
 from launch_ros.actions import Node
 from launch_ros.substitutions import FindPackageShare
@@ -110,12 +111,15 @@ def launch_setup(context, *args, **kwargs):
             safety_k_position,
             " ",
             "name:=",
+            "ur",
+            " ",
+            "ur_type:=",
             ur_type,
             " ",
             "prefix:=",
             prefix,
             " ",
-            "gazebo_sim:=true",
+            "sim_gazebo:=true",
             " ",
             "simulation_controllers:=",
             initial_joint_controllers,
@@ -168,15 +172,10 @@ def launch_setup(context, *args, **kwargs):
     )
 
     # Gazebo nodes
-    gzserver = ExecuteProcess(
-        cmd=["gzserver", "-s", "libgazebo_ros_init.so", "-s", "libgazebo_ros_factory.so", ""],
-        output="screen",
-    )
-
-    # Gazebo client
-    gzclient = ExecuteProcess(
-        cmd=["gzclient"],
-        output="screen",
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            [FindPackageShare("gazebo_ros"), "/launch", "/gazebo.launch.py"]
+        ),
     )
 
     # Spawn robot
@@ -184,7 +183,7 @@ def launch_setup(context, *args, **kwargs):
         package="gazebo_ros",
         executable="spawn_entity.py",
         name="spawn_ur",
-        arguments=["-entity", ur_type, "-topic", "robot_description"],
+        arguments=["-entity", "ur", "-topic", "robot_description"],
         output="screen",
     )
 
@@ -194,8 +193,7 @@ def launch_setup(context, *args, **kwargs):
         delay_rviz_after_joint_state_broadcaster_spawner,
         initial_joint_controller_spawner_stopped,
         initial_joint_controller_spawner_started,
-        gzserver,
-        gzclient,
+        gazebo,
         gazebo_spawn_robot,
     ]
 
@@ -261,7 +259,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_file",
-            default_value="ur_simulation.urdf.xacro",
+            default_value="ur.urdf.xacro",
             description="URDF/XACRO description file with the robot.",
         )
     )

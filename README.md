@@ -68,3 +68,8 @@ Move robot using test script from  `ur_bringup` package:
 ```
 ros2 launch ur_bringup test_joint_trajectory_controller.launch.py
 ```
+
+Example using MoveIt with simulated robot:
+```
+ros2 launch ur_simulation_gazebo ur_sim_moveit.launch.py
+```

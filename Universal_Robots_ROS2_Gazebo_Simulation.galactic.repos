@@ -1,6 +1,44 @@
 repositories:
-  ## EXAMPLE DEPENDENCY
-#   <some_ros_package>:
-#     type: git
-#     url: git@github.com:<some_github_namespace>/<some_ros_package>.git
-#     version: master
+  gazebo_ros2_control:
+    type: git
+    url: https://github.com/destogl/gazebo_ros2_control.git
+    version: add-support-for-initial-position
+    #url: https://github.com/ros-simulation/gazebo_ros2_control.git
+    #version: master
+
+  moveit2:
+    type: git
+    url: https://github.com/destogl/moveit2.git
+    version: fix-controller-check-for-simulation
+    #url: https://github.com/ros-planning/moveit2.git
+    #version: main
+
+  ros2_control:
+    type: git
+    url: https://github.com/ros-controls/ros2_control.git
+    version: galactic
+  ros2_control_demos:
+    type: git
+    url: https://github.com/ros-controls/ros2_control_demos.git
+    version: master
+  ros2_controllers:
+    type: git
+    url: https://github.com/ros-controls/ros2_controllers.git
+    version: master
+
+  Universal_Robots_Client_Library:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_Client_Library.git
+    version: master
+  Universal_Robots_ROS2_Description:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+    version: simulation
+  Universal_Robots_ROS2_Driver:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
+    version: remove-description-package
+  ur_msgs:
+    type: git
+    url: https://github.com/destogl/ur_msgs.git
+    version: ros2
