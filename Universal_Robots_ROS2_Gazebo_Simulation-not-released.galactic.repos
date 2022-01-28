@@ -1,10 +1,9 @@
 repositories:
+
   gazebo_ros2_control:
     type: git
-    url: https://github.com/destogl/gazebo_ros2_control.git
-    version: add-support-for-initial-position
-    #url: https://github.com/ros-simulation/gazebo_ros2_control.git
-    #version: master
+    url: https://github.com/ros-simulation/gazebo_ros2_control.git
+    version: master
 
   ros2_control_demos:
     type: git
