@@ -32,7 +32,7 @@ repositories:
   Universal_Robots_ROS2_Description:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
-    version: simulation
+    version: ros2
   Universal_Robots_ROS2_Driver:
     type: git
     url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Driver.git
