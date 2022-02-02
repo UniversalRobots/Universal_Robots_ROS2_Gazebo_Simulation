@@ -22,6 +22,7 @@
   <exec_depend>launch</exec_depend>
   <exec_depend>launch_ros</exec_depend>
   <exec_depend>rviz2</exec_depend>
+  <exec_depend>ur_controllers</exec_depend>
   <exec_depend>ur_description</exec_depend>
   <exec_depend>ur_moveit_config</exec_depend>
   <exec_depend>urdf</exec_depend>
