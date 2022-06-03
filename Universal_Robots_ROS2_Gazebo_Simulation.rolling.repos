@@ -7,10 +7,8 @@ repositories:
 
   moveit2:
     type: git
-    url: https://github.com/destogl/moveit2.git
-    version: fix-controller-check-for-simulation
-    #url: https://github.com/ros-planning/moveit2.git
-    #version: main
+    url: https://github.com/ros-planning/moveit2.git
+    version: main
 
   ros2_control:
     type: git
@@ -39,5 +37,5 @@ repositories:
     version: main
   ur_msgs:
     type: git
-    url: https://github.com/destogl/ur_msgs.git
-    version: ros2
+    url: https://github.com/ros-industrial/ur_msgs.git
+    version: foxy-devel
