@@ -29,8 +29,31 @@
 
     <!-- create link fixed to the "world" -->
     <link name="world" />
-
+    <!-- 
+         After #52 this will be less verbose 
+         since read_model_data will be seperate from ur_robot
+         and we can modify just the properties we need
+     -->
+    <xacro:property name="jnt_limits_file" value="$(arg joint_limit_params)"/>
+    <xacro:property name="jnt_limits"
+      value="${xacro.load_yaml(jnt_limits_file)['joint_limits']}"
+    />
+    <xacro:property name="fric_scale" value="100.0" />  
+    <xacro:property name="joint_dyn_dict"
+      value="${dict(
+          joint_dynamics=dict(
+              shoulder_pan_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['shoulder_pan_joint']['max_effort']),
+              shoulder_lift_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['shoulder_lift_joint']['max_effort']),
+              elbow_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['elbow_joint']['max_effort']),
+              wrist_1_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['wrist_1_joint']['max_effort']),
+              wrist_2_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['wrist_2_joint']['max_effort']),
+              wrist_3_joint=dict(damping=0.0, friction=fric_scale*jnt_limits['wrist_3_joint']['max_effort'])))}"
+    />
+    <param name="blah" value="${joint_dyn_dict}" />
+    
+    
     <!-- arm -->
+    
     <xacro:ur_robot
       name="$(arg name)"
       prefix="$(arg prefix)"
@@ -42,13 +65,14 @@
       kinematics_parameters_file="$(arg kinematics_params)"
       physical_parameters_file="$(arg physical_params)"
       visual_parameters_file="$(arg visual_params)"
+      joint_dynamics="${joint_dyn_dict}"
       transmission_hw_interface=""
       sim_gazebo="true"
       initial_positions="${xacro.load_yaml(initial_positions_file)}"
       >
-      <origin xyz="0 0 0.05" rpy="0 0 0" />          <!-- position robot in the world -->
+      <origin xyz="0 0 0.05" rpy="0 0 0" />  
     </xacro:ur_robot>
-
+    
 
     <!-- Gazebo plugins -->
     <gazebo reference="world">
