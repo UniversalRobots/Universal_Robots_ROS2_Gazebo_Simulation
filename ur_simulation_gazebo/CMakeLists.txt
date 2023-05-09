@@ -3,7 +3,7 @@ project(ur_simulation_gazebo)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY config launch
+install(DIRECTORY config launch urdf
   DESTINATION share/${PROJECT_NAME}
 )
 
