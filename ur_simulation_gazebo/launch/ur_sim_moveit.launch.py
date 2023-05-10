@@ -79,6 +79,7 @@ def launch_setup(context, *args, **kwargs):
             "prefix": prefix,
             "use_sim_time": "true",
             "launch_rviz": "true",
+            "use_fake_hardware": "true", #to get regular JTC instead of scaled JTC. What are the other consequences?
         }.items(),
     )
 
@@ -127,7 +128,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_package",
-            default_value="ur_description",
+            default_value="ur_simulation_gazebo", # TODO: UNTANGLE DEPS -> ur_moveit_config passes explicit joint limits, kinematics params, etc to the .urdf.xacro (probably for calibration, etc.) Do we duplicate all of the defaults?
             description="Description package with robot URDF/XACRO files. Usually the argument \
         is not set, it enables use of a custom description.",
         )
@@ -135,7 +136,7 @@ def generate_launch_description():
     declared_arguments.append(
         DeclareLaunchArgument(
             "description_file",
-            default_value="ur.urdf.xacro",
+            default_value="ur_gazebo_classic.urdf.xacro",
             description="URDF/XACRO description file with the robot.",
         )
     )
