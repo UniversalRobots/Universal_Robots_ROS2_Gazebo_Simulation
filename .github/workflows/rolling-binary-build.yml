@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - ros2
+  workflow_dispatch:
   schedule:
     # Run every morning to detect flakiness and broken dependencies
     - cron: '13 4 * * *'
