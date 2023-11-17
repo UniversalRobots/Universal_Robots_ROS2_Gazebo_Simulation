@@ -1,4 +1,4 @@
-name: Rolling Binary Build Main
+name: Rolling Semi Binary Main
 on:
   workflow_dispatch:
     branches:
@@ -19,3 +19,4 @@ jobs:
       ros_distro: rolling
       ros_repo: main
       ref_for_scheduled_build: ros2
+      upstream_workspace: Universal_Robots_ROS2_Gazebo_Simulation.rolling.repos
