@@ -1,4 +1,4 @@
-name: Humble Binary Testing
+name: Iron Binary Testing
 on:
   workflow_dispatch:
     branches:
@@ -16,6 +16,6 @@ jobs:
   binary:
     uses: ./.github/workflows/reusable_ici.yml
     with:
-      ros_distro: humble
+      ros_distro: iron
       ros_repo: testing
       ref_for_scheduled_build: ros2
