@@ -67,7 +67,7 @@ Skip any of below steps is not applicable.
    > **NOTE:** Feel free to change `~/workspaces/ur_gazebo` to whatever absolute path you want.
 
    > **NOTE:** Over time you will probably have multiple ROS workspaces, so it makes sense to them all in a subfolder.
-     Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name `ros_ws_foxy`.
+     Also, it is good practice to put the ROS version in the name of the workspace, for different tests you could just add a suffix to the base name `ur_gazebo`.
 
 1. Download the required repositories and install package dependencies:
    ```
