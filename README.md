@@ -13,7 +13,7 @@ Example files and configurations for Gazebo Classic simulation of Universal Robo
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/ros2">ros2</a></td>
   </tr>
