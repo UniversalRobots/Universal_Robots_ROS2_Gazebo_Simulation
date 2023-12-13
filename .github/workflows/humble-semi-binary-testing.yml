@@ -19,4 +19,4 @@ jobs:
       ros_distro: humble
       ros_repo: testing
       ref_for_scheduled_build: humble
-      upstream_workspace: Universal_Robots_HUMBLE_Gazebo_Simulation.humble.repos
+      upstream_workspace: Universal_Robots_ROS2_Gazebo_Simulation.humble.repos
