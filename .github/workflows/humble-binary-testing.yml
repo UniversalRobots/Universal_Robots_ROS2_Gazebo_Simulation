@@ -2,13 +2,13 @@ name: Humble Binary Testing
 on:
   workflow_dispatch:
     branches:
-      - ros2
+      - humble
   pull_request:
     branches:
-      - ros2
+      - humble
   push:
     branches:
-      - ros2
+      - humble
   schedule:
     - cron: '13 4 * * *'
 
@@ -18,4 +18,4 @@ jobs:
     with:
       ros_distro: humble
       ros_repo: testing
-      ref_for_scheduled_build: ros2
+      ref_for_scheduled_build: humble
