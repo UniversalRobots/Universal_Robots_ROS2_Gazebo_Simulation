@@ -53,8 +53,6 @@ def launch_setup(context, *args, **kwargs):
     # General arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
-    description_package = LaunchConfiguration("description_package")
-    description_file = LaunchConfiguration("description_file")
     prefix = LaunchConfiguration("prefix")
     start_joint_controller = LaunchConfiguration("start_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
@@ -65,7 +63,7 @@ def launch_setup(context, *args, **kwargs):
     )
 
     rviz_config_file = PathJoinSubstitution(
-        [FindPackageShare(description_package), "rviz", "view_robot.rviz"]
+        [FindPackageShare("ur_description"), "rviz", "view_robot.rviz"]
     )
 
     robot_description_content = Command(
@@ -73,7 +71,7 @@ def launch_setup(context, *args, **kwargs):
             PathJoinSubstitution([FindExecutable(name="xacro")]),
             " ",
             PathJoinSubstitution(
-                [FindPackageShare(description_package), "urdf", description_file]
+                [FindPackageShare("ur_simulation_gazebo"), "urdf", "ur_gazebo.urdf.xacro"]
             ),
             " ",
             "safety_limits:=",
@@ -93,8 +91,6 @@ def launch_setup(context, *args, **kwargs):
             " ",
             "prefix:=",
             prefix,
-            " ",
-            "sim_gazebo:=true",
             " ",
             "simulation_controllers:=",
             initial_joint_controllers,
@@ -221,21 +217,6 @@ def generate_launch_description():
             "controllers_file",
             default_value="ur_controllers.yaml",
             description="YAML file with the controllers configuration.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "description_package",
-            default_value="ur_description",
-            description="Description package with robot URDF/XACRO files. Usually the argument \
-        is not set, it enables use of a custom description.",
-        )
-    )
-    declared_arguments.append(
-        DeclareLaunchArgument(
-            "description_file",
-            default_value="ur.urdf.xacro",
-            description="URDF/XACRO description file with the robot.",
         )
     )
     declared_arguments.append(
