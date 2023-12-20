@@ -1,4 +1,8 @@
 repositories:
+  ur_description:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description
+    version: rolling
 
   gazebo_ros2_control:
     type: git
