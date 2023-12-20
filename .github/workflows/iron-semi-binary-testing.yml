@@ -2,13 +2,13 @@ name: Iron Semi Binary Testing
 on:
   workflow_dispatch:
     branches:
-      - ros2
+      - iron
   pull_request:
     branches:
-      - ros2
+      - iron
   push:
     branches:
-      - ros2
+      - iron
   schedule:
     - cron: '13 4 * * *'
 
@@ -18,5 +18,5 @@ jobs:
     with:
       ros_distro: iron
       ros_repo: testing
-      ref_for_scheduled_build: ros2
+      ref_for_scheduled_build: iron
       upstream_workspace: Universal_Robots_ROS2_Gazebo_Simulation.iron.repos
