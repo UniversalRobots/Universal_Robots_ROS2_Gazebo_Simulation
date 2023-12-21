@@ -79,6 +79,7 @@ def launch_setup(context, *args, **kwargs):
             "prefix": prefix,
             "use_sim_time": "true",
             "launch_rviz": "true",
+            "use_mock_hardware": "true",
         }.items(),
     )
 
