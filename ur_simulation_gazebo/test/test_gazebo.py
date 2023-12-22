@@ -119,7 +119,7 @@ class GazeboTest(unittest.TestCase):
         """Test robot movement."""
         # Construct test trajectory
         test_trajectory = [
-            (Duration(sec=6, nanosec=0), [0.0 for j in ROBOT_JOINTS]),
+            (Duration(sec=6, nanosec=0), [-0.1 for j in ROBOT_JOINTS]),
             (Duration(sec=9, nanosec=0), [-0.5 for j in ROBOT_JOINTS]),
             (Duration(sec=12, nanosec=0), [-1.0 for j in ROBOT_JOINTS]),
         ]
