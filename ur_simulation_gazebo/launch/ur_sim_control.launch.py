@@ -182,7 +182,11 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "ur_type",
             description="Type/series of used UR robot.",
+<<<<<<< HEAD
             choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e"],
+=======
+            choices=["ur3", "ur3e", "ur5", "ur5e", "ur10", "ur10e", "ur16e", "ur20", "ur30"],
+>>>>>>> e5a8c85 (Add UR30 as a new option to launch things (#47))
             default_value="ur5e",
         )
     )
