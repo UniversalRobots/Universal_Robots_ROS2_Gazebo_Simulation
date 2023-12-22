@@ -52,9 +52,7 @@ from control_msgs.action import FollowJointTrajectory
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 sys.path.append(os.path.dirname(__file__))
-from test_common import (  # noqa: E402
-    ActionInterface,
-)
+from test_common import ActionInterface, wait_for_controller  # noqa: E402
 
 
 TIMEOUT_EXECUTE_TRAJECTORY = 30
@@ -109,6 +107,7 @@ class GazeboTest(unittest.TestCase):
         rclpy.shutdown()
 
     def init_robot(self):
+        wait_for_controller(self.node, "joint_trajectory_controller", 30)
         self._follow_joint_trajectory = ActionInterface(
             self.node,
             "/joint_trajectory_controller/follow_joint_trajectory",
