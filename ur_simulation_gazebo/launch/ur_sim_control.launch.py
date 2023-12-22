@@ -54,7 +54,7 @@ def launch_setup(context, *args, **kwargs):
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
     prefix = LaunchConfiguration("prefix")
-    start_joint_controller = LaunchConfiguration("start_joint_controller")
+    activate_joint_controller = LaunchConfiguration("activate_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
     launch_rviz = LaunchConfiguration("launch_rviz")
 
@@ -125,7 +125,8 @@ def launch_setup(context, *args, **kwargs):
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
             on_exit=[rviz_node],
-        )
+        ),
+        condition=IfCondition(launch_rviz),
     )
 
     # There may be other controllers of the joints, but this is the initially-started one
@@ -133,13 +134,13 @@ def launch_setup(context, *args, **kwargs):
         package="controller_manager",
         executable="spawner",
         arguments=[initial_joint_controller, "-c", "/controller_manager"],
-        condition=IfCondition(start_joint_controller),
+        condition=IfCondition(activate_joint_controller),
     )
     initial_joint_controller_spawner_stopped = Node(
         package="controller_manager",
         executable="spawner",
         arguments=[initial_joint_controller, "-c", "/controller_manager", "--stopped"],
-        condition=UnlessCondition(start_joint_controller),
+        condition=UnlessCondition(activate_joint_controller),
     )
 
     # Gazebo nodes
@@ -230,7 +231,7 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument(
-            "start_joint_controller",
+            "activate_joint_controller",
             default_value="true",
             description="Enable headless mode for robot control",
         )
