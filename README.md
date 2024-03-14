@@ -44,11 +44,6 @@ A more [detailed build status](ci_status.md) shows the state of all CI workflows
 Please note that the detailed view is intended for developers, while the one here should give end
 users an overview of the current released state.
 
-## Known issues
-:warning: The UR5 (non-e-series) model seems to be broken at the moment. Please see [#34](https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/issues/34) :warning:
-
-All other models should be working correctly.
-
 ## Using the repository
 Skip any of below steps is not applicable.
 
