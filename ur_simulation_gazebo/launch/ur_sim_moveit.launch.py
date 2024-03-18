@@ -36,7 +36,6 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def launch_setup(context, *args, **kwargs):
-
     # Initialize Arguments
     ur_type = LaunchConfiguration("ur_type")
     safety_limits = LaunchConfiguration("safety_limits")
@@ -114,8 +113,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "runtime_config_package",
             default_value="ur_simulation_gazebo",
-            description='Package with the controller\'s configuration in "config" folder. \
-        Usually the argument is not set, it enables use of a custom setup.',
+            description='Package with the controller\'s configuration in "config" folder. '
+            "Usually the argument is not set, it enables use of a custom setup.",
         )
     )
     declared_arguments.append(
@@ -129,8 +128,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "description_package",
             default_value="ur_description",
-            description="Description package with robot URDF/XACRO files. Usually the argument \
-        is not set, it enables use of a custom description.",
+            description="Description package with robot URDF/XACRO files. Usually the argument "
+            "is not set, it enables use of a custom description.",
         )
     )
     declared_arguments.append(
@@ -144,8 +143,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "moveit_config_package",
             default_value="ur_moveit_config",
-            description="MoveIt config package with robot SRDF/XACRO files. Usually the argument \
-        is not set, it enables use of a custom moveit config.",
+            description="MoveIt config package with robot SRDF/XACRO files. Usually the argument "
+            "is not set, it enables use of a custom moveit config.",
         )
     )
     declared_arguments.append(
@@ -159,9 +158,9 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "prefix",
             default_value='""',
-            description="Prefix of the joint names, useful for \
-        multi-robot setup. If changed than also joint names in the controllers' configuration \
-        have to be updated.",
+            description="Prefix of the joint names, useful for "
+            "multi-robot setup. If changed than also joint names in the controllers' configuration "
+            "have to be updated.",
         )
     )
 
