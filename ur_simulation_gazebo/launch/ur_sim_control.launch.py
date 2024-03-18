@@ -44,7 +44,6 @@ from launch_ros.substitutions import FindPackageShare
 
 
 def launch_setup(context, *args, **kwargs):
-
     # Initialize Arguments
     ur_type = LaunchConfiguration("ur_type")
     safety_limits = LaunchConfiguration("safety_limits")
@@ -208,8 +207,8 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "runtime_config_package",
             default_value="ur_simulation_gazebo",
-            description='Package with the controller\'s configuration in "config" folder. \
-        Usually the argument is not set, it enables use of a custom setup.',
+            description='Package with the controller\'s configuration in "config" folder. '
+            "Usually the argument is not set, it enables use of a custom setup.",
         )
     )
     declared_arguments.append(
@@ -223,9 +222,9 @@ def generate_launch_description():
         DeclareLaunchArgument(
             "prefix",
             default_value='""',
-            description="Prefix of the joint names, useful for \
-        multi-robot setup. If changed than also joint names in the controllers' configuration \
-        have to be updated.",
+            description="Prefix of the joint names, useful for "
+            "multi-robot setup. If changed than also joint names in the controllers' configuration "
+            "have to be updated.",
         )
     )
     declared_arguments.append(
