@@ -47,10 +47,6 @@ users an overview of the current released state.
 ## Known issues
 :warning: The UR5 (non-e-series) model seems to be broken at the moment. Please see [#34](https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/issues/34) :warning:
 
-:construction: The UR20 has not been added, yet. There are a couple of things we want to change in
-this repo first. Please see
-[#35](https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/issues/35) :construction:
-
 All other models should be working correctly.
 
 ## Using the repository
