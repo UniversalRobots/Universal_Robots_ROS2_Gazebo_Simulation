@@ -19,4 +19,4 @@ jobs:
       ros_distro: iron
       ros_repo: testing
       ref_for_scheduled_build: iron
-      upstream_workspace: Universal_Robots_iron_Gazebo_Simulation.iron.repos
+      upstream_workspace: Universal_Robots_ROS2_Gazebo_Simulation.iron.repos
