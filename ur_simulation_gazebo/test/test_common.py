@@ -76,8 +76,9 @@ def wait_for_controller(
         for controller in result.controller:
             if controller.name == controller_name:
                 controller_active = controller.state == "active"
-                logging.info("Controller '%s' is active.", controller_name)
-                return True
+                if controller_active:
+                    logging.info("Controller '%s' is active.", controller_name)
+                    return True
         time.sleep(1)
     raise Exception(
         f"Could not find active controller '{controller_name}' within timeout of {timeout}"
