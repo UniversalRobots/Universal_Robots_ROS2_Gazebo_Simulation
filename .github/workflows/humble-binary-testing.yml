@@ -1,0 +1,21 @@
+name: Humble Binary Testing
+on:
+  workflow_dispatch:
+    branches:
+      - humble
+  pull_request:
+    branches:
+      - humble
+  push:
+    branches:
+      - humble
+  schedule:
+    - cron: '13 4 * * *'
+
+jobs:
+  binary:
+    uses: ./.github/workflows/reusable_ici.yml
+    with:
+      ros_distro: humble
+      ros_repo: testing
+      ref_for_scheduled_build: humble
