@@ -59,6 +59,7 @@ def launch_setup(context, *args, **kwargs):
     start_joint_controller = LaunchConfiguration("start_joint_controller")
     initial_joint_controller = LaunchConfiguration("initial_joint_controller")
     launch_rviz = LaunchConfiguration("launch_rviz")
+    gazebo_gui = LaunchConfiguration("gazebo_gui")
 
     initial_joint_controllers = PathJoinSubstitution(
         [FindPackageShare(runtime_config_package), "config", controllers_file]
@@ -151,6 +152,9 @@ def launch_setup(context, *args, **kwargs):
         PythonLaunchDescriptionSource(
             [FindPackageShare("gazebo_ros"), "/launch", "/gazebo.launch.py"]
         ),
+        launch_arguments={
+            "gui": gazebo_gui,
+        }.items(),
     )
 
     # Spawn robot
@@ -263,6 +267,11 @@ def generate_launch_description():
     )
     declared_arguments.append(
         DeclareLaunchArgument("launch_rviz", default_value="true", description="Launch RViz?")
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "gazebo_gui", default_value="true", description="Start gazebo with GUI?"
+        )
     )
 
     return LaunchDescription(declared_arguments + [OpaqueFunction(function=launch_setup)])
