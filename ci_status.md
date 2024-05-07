@@ -11,8 +11,8 @@ upstream changes some pipelines might turn red temporarily which can be expected
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">ros2</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">ros2</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">iron</a></td>
   </tr>
   <tr>
     <th>Repo builds</th>
