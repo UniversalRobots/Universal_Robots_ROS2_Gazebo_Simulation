@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2023, FZI Forschungszentrum Informatik
+# Copyright 2024, FZI Forschungszentrum Informatik
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:

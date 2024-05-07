@@ -1,4 +1,4 @@
-# Copyright 2023, FZI Forschungszentrum Informatik
+# Copyright 2024, FZI Forschungszentrum Informatik
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -34,7 +34,7 @@ from rclpy.action import ActionClient
 from controller_manager_msgs.srv import ListControllers
 
 TIMEOUT_WAIT_SERVICE = 10
-TIMEOUT_WAIT_SERVICE_INITIAL = 120  # If we download the docker image simultaneously to the tests, it can take quite some time until the dashboard server is reachable and usable.
+TIMEOUT_WAIT_SERVICE_INITIAL = 120
 TIMEOUT_WAIT_ACTION = 20
 
 
