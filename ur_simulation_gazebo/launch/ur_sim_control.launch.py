@@ -130,7 +130,8 @@ def launch_setup(context, *args, **kwargs):
         event_handler=OnProcessExit(
             target_action=joint_state_broadcaster_spawner,
             on_exit=[rviz_node],
-        )
+        ),
+        condition=IfCondition(launch_rviz),
     )
 
     # There may be other controllers of the joints, but this is the initially-started one
