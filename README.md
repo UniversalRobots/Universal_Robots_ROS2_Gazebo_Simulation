@@ -16,8 +16,8 @@ Ubuntu 22.04 at the time of writing. However, it is no longer supported.
   </tr>
   <tr>
     <th>Branch</th>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">iron</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/tree/humble">humble</a></td>
+    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/tree/iron">iron</a></td>
   </tr>
   <tr>
     <th>Build status</th>
@@ -58,18 +58,16 @@ Skip any of below steps is not applicable.
 
 1. Download the required repositories and install package dependencies:
    ```
-   cd $COLCON_WS
-   git clone git@github.com:UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git src/Universal_Robots_ROS2_Gazebo_Simulation
-   vcs import src --input src/Universal_Robots_ROS2_Gazebo_Simulation/Universal_Robots_ROS2_Gazebo_Simulation.<ros-distro>.repos
-   rosdep install --ignore-src --from-paths src -y
-   cd ..
+   cd $COLCON_WS/src
+   git clone https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git
+   rosdep update && rosdep install --ignore-src --from-paths . -y
    ```
 
 ### Configure and Build Workspace:
 To configure and build workspace execute following commands:
   ```
   cd $COLCON_WS
-  colcon build --symlink-install --mixin rel-with-deb-info compile-commands ccache
+  colcon build --symlink-install
   ```
 
 ## Running Simulation
