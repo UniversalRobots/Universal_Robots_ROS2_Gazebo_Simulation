@@ -59,7 +59,7 @@ Skip any of below steps is not applicable.
 1. Download the required repositories and install package dependencies:
    ```
    cd $COLCON_WS/src
-   git clone https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git
+   git clone -b humble https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation.git
    rosdep update && rosdep install --ignore-src --from-paths . -y
    ```
 
