@@ -53,7 +53,9 @@ def launch_setup(context, *args, **kwargs):
     # General arguments
     runtime_config_package = LaunchConfiguration("runtime_config_package")
     controllers_file = LaunchConfiguration("controllers_file")
+    initial_positions_file = LaunchConfiguration("initial_positions_file")
     description_package = LaunchConfiguration("description_package")
+    description_file = LaunchConfiguration("description_file")
     description_file = LaunchConfiguration("description_file")
     prefix = LaunchConfiguration("prefix")
     start_joint_controller = LaunchConfiguration("start_joint_controller")
@@ -63,6 +65,10 @@ def launch_setup(context, *args, **kwargs):
 
     initial_joint_controllers = PathJoinSubstitution(
         [FindPackageShare(runtime_config_package), "config", controllers_file]
+    )
+
+    initial_positions_file_abs = PathJoinSubstitution(
+        [FindPackageShare(runtime_config_package), "config", initial_positions_file]
     )
 
     rviz_config_file = PathJoinSubstitution(
@@ -99,6 +105,9 @@ def launch_setup(context, *args, **kwargs):
             " ",
             "simulation_controllers:=",
             initial_joint_controllers,
+            " ",
+            "initial_positions_file:=",
+            initial_positions_file_abs,
         ]
     )
     robot_description = {"robot_description": robot_description_content}
@@ -226,6 +235,19 @@ def generate_launch_description():
             "controllers_file",
             default_value="ur_controllers.yaml",
             description="YAML file with the controllers configuration.",
+        )
+    )
+    declared_arguments.append(
+        DeclareLaunchArgument(
+            "initial_positions_file",
+            default_value=PathJoinSubstitution(
+                [
+                    FindPackageShare("ur_description"),
+                    "config",
+                    "initial_positions.yaml",
+                ]
+            ),
+            description="YAML file (absolute path) with the robot's initial joint positions.",
         )
     )
     declared_arguments.append(
