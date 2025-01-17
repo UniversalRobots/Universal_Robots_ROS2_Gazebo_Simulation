@@ -7,12 +7,10 @@ upstream changes some pipelines might turn red temporarily which can be expected
   <tr>
     <th></th>
     <th>Humble</th>
-    <th>Iron</th>
   </tr>
   <tr>
     <th>Branch</th>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/humble">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Description/tree/iron">iron</a></td>
   </tr>
   <tr>
     <th>Repo builds</th>
@@ -32,24 +30,6 @@ upstream changes some pipelines might turn red temporarily which can be expected
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/humble-semi-binary-testing.yml?query=event%3Aschedule+">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/humble-semi-binary-testing.yml/badge.svg?event=schedule"
               alt="Humble Semi-Binary Testing"/>
-      </a>
-    </td>
-    <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-main.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-main.yml/badge.svg?event=schedule"
-              alt="Iron Binary Main"/>
-      </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-testing.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-testing.yml/badge.svg?event=schedule"
-              alt="Iron Binary Testing"/>
-      </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-semi-binary-main.yml?query=event%3Aschedule+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-semi-binary-main.yml/badge.svg?event=schedule"
-              alt="Iron Semi-Binary Main"/>
-      </a> <br />
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-semi-binary-testing.yml?query=event%3Aschedule+">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-semi-binary-testing.yml/badge.svg?event=schedule"
-              alt="Iron Semi-Binary Testing"/>
       </a>
     </td>
   </tr>

@@ -5,19 +5,17 @@ Example files and configurations for Gazebo Classic simulation of Universal Robo
 
 ## Build status
 Since Gazebo classic will not be supported from ROS 2 Jazzy on, this package is built against
-Humble and Iron only. The `ros2` branch contains a version that is running on ROS Rolling on
+Humble only. The `ros2` branch contains a version that is running on ROS Rolling on
 Ubuntu 22.04 at the time of writing. However, it is no longer supported.
 
 <table width="100%">
   <tr>
     <th></th>
     <th>Humble</th>
-    <th>Iron</th>
   </tr>
   <tr>
     <th>Branch</th>
     <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/tree/humble">humble</a></td>
-    <td><a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/tree/iron">iron</a></td>
   </tr>
   <tr>
     <th>Build status</th>
@@ -25,12 +23,6 @@ Ubuntu 22.04 at the time of writing. However, it is no longer supported.
       <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/humble-binary-main.yml?query=event%3Aschedule++">
          <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/humble-binary-main.yml/badge.svg?event=schedule"
               alt="Humble Binary Main"/>
-      </a> <br />
-    </td>
-    <td>
-      <a href="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-main.yml?query=event%3Aschedule++">
-         <img src="https://github.com/UniversalRobots/Universal_Robots_ROS2_Gazebo_Simulation/actions/workflows/iron-binary-main.yml/badge.svg?event=schedule"
-              alt="Iron Binary Main"/>
       </a> <br />
     </td>
   </tr>
