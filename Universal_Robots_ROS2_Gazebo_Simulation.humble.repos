@@ -19,3 +19,8 @@ repositories:
     type: git
     url: https://github.com/ros-controls/ros2_controllers.git
     version: humble
+
+  ur_description:
+    type: git
+    url: https://github.com/UniversalRobots/Universal_Robots_ROS2_Description.git
+    version: humble
