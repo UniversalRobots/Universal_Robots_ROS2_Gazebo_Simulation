@@ -77,6 +77,7 @@ jobs:
           ROS_DISTRO: ${{ inputs.ros_distro }}
           ROS_REPO: ${{ inputs.ros_repo }}
           CMAKE_ARGS: -DUR_ROBOT_DRIVER_BUILD_INTEGRATION_TESTS=ON
+          ADDITIONAL_DEBS: ros-${{ inputs.ros_distro }}-ros2pkg # gazebo_ros doesn't expose this, though it's a runtime requirement
       - name: prepare target_ws for cache
         if: ${{ always() && ! matrix.env.CCOV }}
         run: |
