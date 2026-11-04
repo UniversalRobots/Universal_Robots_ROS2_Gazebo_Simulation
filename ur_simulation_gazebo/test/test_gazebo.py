@@ -71,7 +71,25 @@ ROBOT_JOINTS = [
 @pytest.mark.launch_test
 @launch_testing.parametrize(
     "ur_type",
-    ["ur3", "ur3e", "ur5", "ur5e", "ur7e", "ur10", "ur10e", "ur12e", "ur16e", "ur20", "ur30"],
+    [
+        "ur3",
+        "ur3e",
+        "ur5",
+        "ur5e",
+        "ur7e",
+        "ur10",
+        "ur10e",
+        "ur12e",
+        "ur16e",
+        "ur8long",
+        "ur15",
+        "ur18",
+        "ur20",
+        "ur30",
+        "ur10g-1750",
+        "ur17g-1300",
+        "ur18g-950",
+    ],
 )
 def generate_test_description(ur_type):
     gazebo = IncludeLaunchDescription(
